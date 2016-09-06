@@ -13,9 +13,12 @@ package clases;
 public class Fracionario {
     private int numerador;
     private int denominador;
-    public Fracionario (int numerado, int denominador){
+    public Fracionario (int numerado, int denominador) throws DenominadorCeroException{
        this .numerador=numerador;
        this.denominador=denominador;
+       if(denominador ==0 ){
+           throw new DenominadorCeroException();
+       }
     }
 
     public int getNumerador() {
@@ -33,7 +36,7 @@ public class Fracionario {
     public void setDenominador(int denominador) {
         this.denominador = denominador;
     }
-    public Fracionario sumar(Fracionario f2){
+    public Fracionario sumar(Fracionario f2) throws DenominadorCeroException{
         Fracionario f;
         int num,den;
         
@@ -42,7 +45,7 @@ public class Fracionario {
          f = new Fracionario(num, den);
          return f;
     }
-     public Fracionario resta(Fracionario f2){
+     public Fracionario resta(Fracionario f2) throws DenominadorCeroException{
         Fracionario f;
         int num,den;
         
