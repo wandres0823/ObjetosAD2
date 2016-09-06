@@ -42,4 +42,14 @@ public class Fracionario {
          f = new Fracionario(num, den);
          return f;
     }
+     public Fracionario resta(Fracionario f2){
+        Fracionario f;
+        int num,den;
+        
+        num =this.numerador* f2.denominador- this.denominador*f2.numerador;
+        den = this.denominador*f2.denominador;
+         f = new Fracionario(num, den);
+         return f;
+}
+     
 }
